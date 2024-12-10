@@ -3,5 +3,5 @@ library(testthat)
 a <- 1
 b <- 2
 c <- a + b
-testthat::expect_equal(c,3)
+testthat::expect_equal(c,4)
 print("Finished running tests")
