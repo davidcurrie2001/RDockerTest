@@ -1,11 +1,12 @@
 # Container image of R development build
 FROM rocker/drd:latest
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+# Install testthat from CRAN
+RUN R -e "install.packages('testthat',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+
+# Copy test files to container
 RUN mkdir -p /Tests
 COPY Tests.R /Tests/Tests.R
-#RUN chmod +x /entrypoint.sh 
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-#ENTRYPOINT ["/entrypoint.sh"]
+# Run the tests
 CMD Rscript /Tests/Tests.R
