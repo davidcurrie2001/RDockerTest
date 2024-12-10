@@ -1,4 +1,6 @@
-on: [push]
+on:
+  schedule:
+    - cron: "30 12 * * *"   # 12:30 UTC
 
 jobs:
   test-r:
