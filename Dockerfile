@@ -1,5 +1,5 @@
-# Container image that runs your code
-FROM rocker/r-base:latest
+# Container image of R development build
+FROM rocker/drd:latest
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 RUN mkdir -p /Tests
